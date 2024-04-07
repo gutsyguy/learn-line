@@ -1,7 +1,6 @@
 import Navbar from "@/components/Navbar";
 import About from "@/components/About";
 import Info from "@/components/Info";
-import Button from "@/components/button";
 import { Html, Head, Main, NextScript } from "next/document";
 
 export default function Document() {
@@ -10,7 +9,7 @@ export default function Document() {
       <Head />
       <body className="flex-col justify-center content-center">
         <Navbar/>
-        <About />
+        {/* <About /> */}
         {/* <div className="flex flex-col justify-center items-center"> */}
         {/* <Info />
         <Button /> */}
