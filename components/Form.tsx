@@ -90,17 +90,8 @@ const Form = () => {
       }
     }
     else if (currentQuestion.id === 4){
-      if (["n/a", "N/A"].includes(answer)){
-        //Career plan is empty
-        console.log("balanced curriculum")
-        setClasses([
-          ["Geometry", "Modern World history", "Chemistry", "English 1", "Physical Education", "Spanish I"],
-          ["Algebra II", "AP US History", "Physics", "English 2", "Physical Education", "Spanish II"],
-          ["Pre-Calculus", "AP Psychology`", "Ap Physics 1", "Ap Lang", "AP Art history", "Spanish III"],
-          ["Ap Calculus BC", "AP Gov", "Ap Physics 2", "English 4", "AP Environmental Science", "Spanish IV"],
-        ])
-      }
-      else if (["engineering", "Engineer"]){
+      
+      if (["engineering", "Engineer"]){
         console.log("lots of math and physics")
         setClasses([
           ["Geometry", "Modern World history", "Chemistry", "English 1", "Physical Education", "Spanish I"],
@@ -125,6 +116,16 @@ const Form = () => {
           ["Algebra II", "US History", "Ap Biology", "English 2", "Physical Education", "Spanish II"],
           ["Pre-Calculus", "Chemistry", "AP Gov", "AP Lang", "AP Art History", "Spanish III"],
           ["AP Calculus BC", "AP Chemistry", "AP Physics C:Mechanics", "English 4", "Physical Education", "Spanish IV"]
+        ])
+      }
+      else {
+        //Career plan is empty
+        console.log("balanced curriculum")
+        setClasses([
+          ["Geometry", "Modern World history", "Chemistry", "English 1", "Physical Education", "Spanish I"],
+          ["Algebra II", "AP US History", "Physics", "English 2", "Physical Education", "Spanish II"],
+          ["Pre-Calculus", "AP Psychology`", "Ap Physics 1", "Ap Lang", "AP Art history", "Spanish III"],
+          ["Ap Calculus BC", "AP Gov", "Ap Physics 2", "English 4", "AP Environmental Science", "Spanish IV"],
         ])
       }
       setCurrentQuestionIndex(currentQuestionIndex + 1)
