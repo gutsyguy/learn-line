@@ -5,10 +5,11 @@ const Navbar = () => {
     return (
         <div className="flex justify-center pt-2 top-0 w-full text-center bg-black ">
           <div className="flex relative flex-row space-x-4 font-semibold text-lg">
-            <div className="text-white">
-              <Link href="/">LearnLine</Link>
-            </div>
+            
             <div className="flex flex-row items-center space-x-4">
+              <div className="text-white">
+              <Link href="/">LearnLine</Link>
+              </div>
               <div className="text-white">
                 <Link href="/">About</Link>
               </div>
