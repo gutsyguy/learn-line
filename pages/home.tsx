@@ -5,19 +5,24 @@ import About from "@/components/About";
 import books from '../public/books.jpeg'; 
 import Info from "@/components/Info";
 import Footer from "@/components/Footer";
-
-const inter = Inter({ subsets: ["latin"] });
+import Button from "@/components/Button";
+import Head from "next/head";
+import Widget from "@/components/widget";
 
 const Home = () => {
-  return (
-    <main className="relative flex-col space-y-2 bg-[#FFFDCA] min-h-screen">
-      <div className="flex relative">
-     </div>
-     <div className="fixed justify-items-center"> 
-        <About />
+  return(
+      <div className="flex flex-col bg-black items-center justify-center basis-3">
+      <div className="flex absolute flex-col items-center justify-center ">
+        <div className="flex relative"> 
+          <Widget />
+        </div>
       </div>
-    </main>
-  );
+      <div className="bottom-5 fixed"> 
+      <Footer />
+      </div>
+    </div>
+  )
 }
 
 export default Home
+

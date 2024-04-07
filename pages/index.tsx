@@ -7,20 +7,17 @@ import Info from "@/components/Info";
 import Footer from "@/components/Footer";
 import Button from "@/components/Button";
 
-const Home = () => {
+const Index = () => {
   return (
-      <main className="flex flex-col bg-[#FFFDCA] max-h-screen items-center justify-center">
-      <div className="flex relative flex-col items-center justify-center translate-x-5">
+      <main className="flex flex-col bg-black items-center justify-center basis-3">
+      <div className="flex absolute flex-col items-center justify-center -translate-y-15 translate-x-4">
         <Info />
-      <div> 
-        <Button />
       </div>
-      </div>
-      <div className="bottom-6 fixed"> 
+      <div className="bottom-5 fixed"> 
       <Footer />
       </div>
     </main>
   );
 }
 
-export default Home
+export default Index
