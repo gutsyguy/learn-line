@@ -6,7 +6,7 @@ const UserWidget = () => {
     return(
         <div className="flex flex-col my-2 mx-2 space-x-4 space-y-4 items-center h-screen w-screen">
             <div className="line-clamp-one bg-gradient-to-r from-amber-200 to-amber-700 rounded-md text-black max-w-15 py-2 px-2 align-middle max-h-15 leading-loose font-semibold text-center font-sans">
-                <div className="absolute justify-items-center"> 
+                <div className="flex relative justify-center"> 
                 <Image
                 src="/info.svg"
                 width={120}

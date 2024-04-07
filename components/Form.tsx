@@ -3,8 +3,6 @@ import React, { useState } from 'react';
 import { student } from '@/random';
 import { createStudent } from '@/lib/learnLineBackend';
 
-
-
 const questions = [
   { 
     id: 1, 
