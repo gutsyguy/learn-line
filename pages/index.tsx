@@ -10,11 +10,8 @@ import Button from "@/components/Button";
 const Home = () => {
   return (
       <main className="flex flex-col bg-[#FFFDCA] max-h-screen items-center justify-center">
-      <div className="flex relative flex-col items-center justify-center translate-x-5">
+      <div className="flex relative flex-col items-center justify-center translate-y-15 translate-x-3">
         <Info />
-      <div> 
-        <Button />
-      </div>
       </div>
       <div className="bottom-6 fixed"> 
       <Footer />
