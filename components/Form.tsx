@@ -12,8 +12,29 @@ const questions = [
   },
   {
     id: 2,
-    text: "How many hours do you code per week? (Just type number)",
-  }
+    text: "What is your name?",
+  },
+  {
+    id: 3,
+    text: "Have you decided on a career? (Type yes or no)"
+  },
+  {
+    id: 4,
+    text: "If you have decided  on a career, what is it? (Type n/a if you haven't)"
+  },
+  {
+    id: 5,
+    text: "What career goals do you have"
+  },
+  {
+    id: 6,
+    text: "How many honors/ap/ib classes do you want to take this year"
+  },
+  {
+    id: 7,
+    text: "How many total classes do you wish to take"
+  },
+  
   // ...add more questions as needed
 ];
 
@@ -36,6 +57,7 @@ const Form = () => {
     e.preventDefault();
     const answer = answers[currentQuestion.id];
     
+    //Don't forget to add the collection  of all answers to the student profile!
     if (currentQuestion.id === 1) {
       if (['9', '10', '11', '12'].includes(answer)) {
         setCurrentQuestionIndex(currentQuestionIndex + 1);
@@ -43,7 +65,42 @@ const Form = () => {
         alert('Please enter a valid grade (9, 10, 11, or 12).');
         return; // Stop the function if the answer is invalid
       }
-    } else if (currentQuestionIndex < questions.length - 1) {
+    } 
+    else if (currentQuestion.id === 3){
+      if (["yes", "no", "Yes", "No"].includes(answer)){
+        setCurrentQuestionIndex(currentQuestionIndex+1)
+      } else{
+        alert("Please enter either 'yes' or 'no'.");
+        return;
+      }
+    }
+    else if (currentQuestion.id === 4){
+      if (["n/a", "N/A"].includes(answer)){
+        //Career plan is empty
+      }
+      setCurrentQuestionIndex(currentQuestionIndex + 1)
+    }
+    else if (currentQuestion.id === 6){
+      if (!Number.isNaN(parseInt(answer))){
+        
+        setCurrentQuestionIndex(currentQuestionIndex + 1)
+      }
+      else{
+        alert("Please enter a valid whole number");
+        return; 
+      }
+    }
+    else if (currentQuestion.id === 7){
+      if (!Number.isNaN(parseInt(answer))){
+        //add the logic to make sure this is greater than or equal to advanced class number
+      }
+      else{
+        alert("Please enter a valid whole number");
+        return; 
+      }
+    }
+
+    else if (currentQuestionIndex < questions.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
     } else {
       console.log('Final answers:', answers);

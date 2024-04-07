@@ -6,7 +6,7 @@ const Navbar = () => {
         <div className="flex justify-center pt-2 top-0 w-full text-center bg-[#FFFDCA] ">
           <div className="flex relative flex-row space-x-4 font-semibold text-lg">
             
-            <div className="flex flex-row items-center space-x-4">
+            <div className="flex flex-row items-center space-x-4 text-black">
               <div className="">
               <Link href="/">LearnLine</Link>
               </div>
