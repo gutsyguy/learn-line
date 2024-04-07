@@ -9,12 +9,10 @@ import Button from "@/components/Button";
 import Head from "next/head";
 import Widget from "@/components/widget";
 
-
 const Home = () => {
   return(
       <div className="flex flex-col bg-black items-center justify-center basis-3">
-      <div className="flex absolute flex-col items-center justify-center -translate-y-15 translate-x-4">
-        <Info />
+      <div className="flex absolute flex-col items-center justify-center ">
         <div className="flex relative"> 
           <Widget />
         </div>
