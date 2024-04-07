@@ -5,7 +5,15 @@ import About from "@/components/About";
 import books from '../public/books.jpeg'; 
 import Info from "@/components/Info";
 import Footer from "@/components/Footer";
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
 import Button from "@/components/Button";
+=======
+import Button from "@/components/button";
+>>>>>>> Stashed changes
+=======
+import Button from "@/components/button";
+>>>>>>> Stashed changes
 
 export default function Home() {
   return (
