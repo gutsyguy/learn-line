@@ -5,17 +5,19 @@ import About from "@/components/About";
 import books from '../public/books.jpeg'; 
 import Info from "@/components/Info";
 import Footer from "@/components/Footer";
-
-const inter = Inter({ subsets: ["latin"] });
+import Button from "@/components/button";
 
 export default function Home() {
   return (
-    <main className="relative flex-col space-y-2 bg-[#FFFDCA] min-h-screen">
-      <div className="flex relative">
-        {/* <Navbar /> */}
-     </div>
-     <div className="fixed justify-items-center"> 
-        <About />
+      <main className="flex flex-col bg-black max-h-screen items-center justify-center">
+      <div className="flex relative flex-col items-center justify-center translate-x-5">
+        <Info />
+      <div> 
+        <Button />
+      </div>
+      </div>
+      <div className="bottom-6 fixed"> 
+      <Footer />
       </div>
     </main>
   );
