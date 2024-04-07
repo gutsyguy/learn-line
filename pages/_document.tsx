@@ -1,6 +1,8 @@
 import Navbar from "@/components/Navbar";
 import About from "@/components/About";
+import Info from "@/components/Info";
 import { Html, Head, Main, NextScript } from "next/document";
+
 
 
 export default function Document() {
@@ -9,6 +11,7 @@ export default function Document() {
       <Head />
       <body className="">
         <Navbar/>
+        <About />
         <Main />
         <NextScript />
       </body>
