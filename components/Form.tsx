@@ -52,7 +52,7 @@ const Form = () => {
   };
 
   return (
-    <form className='pt-10' onSubmit={handleSubmit}>
+    <form className='pt-10 text-black' onSubmit={handleSubmit}>
       <div className='flex justify-center'>
         <h1 className='text-center py-12 w-1/2 bg-[#D9B878] border-2 border-solid rounded-md'>
           Question {currentQuestion.id}: {currentQuestion.text}
