@@ -40,6 +40,7 @@ const questions = [
 
 const Form = () => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const [classes, setClasses] = useState<any>([])
   const [answers, setAnswers] = useState<Answers>({});
   const [errorMessage, setErrorMessage] = useState('');
 
@@ -89,18 +90,43 @@ const Form = () => {
       }
     }
     else if (currentQuestion.id === 4){
-      if (["n/a", "N/A"].includes(answer)){
-        //Career plan is empty
-        console.log("balanced curriculum")
-      }
-      else if (["engineering", "Engineer"]){
+      
+      if (["engineering", "Engineer"]){
         console.log("lots of math and physics")
+        setClasses([
+          ["Geometry", "Modern World history", "Chemistry", "English 1", "Physical Education", "Spanish I"],
+          ["Algebra II", "AP US History", "AP Physics 1", "English 2", "Physical Education", "Spanish II"],
+          ["Pre-Calculus", "AP Physics C: Mechanics", "AP Gov", "AP Lang", "AP Art history", "Spanish III"],
+          ["AP Calculus BC", "AP CSA", "AP Physics C:Electromagnetism", "English 4", "", "Spanish IV"]
+        ])
       }
       else if (["software", "developer", "computer"]){
         console.log("Cs and math")
+        setClasses([
+          ["Geometry", "Modern World history", "Chemistry", "English 1", "Physical Education", "Spanish I"],
+          ["Algebra II", "AP US History", "AP Physics 1", "English 2", "Physical Education", "Spanish II"],
+          ["Pre-Calculus", "AP CSA", "AP Gov", "AP Lang", "AP Art History", "Spanish III"],
+          ["AP Calculus BC", "AP CSP", "AP Physics C:Mechanics", "English 4", "Physical Education", "Spanish IV"]
+        ])
       }
       else if (["Doctor, medical, nurse"]){
         console.log("Lots of bio and chemistry")
+        setClasses([
+          ["Geometry", "Modern World history", "Biology", "English 1", "Physical Education", "Spanish I"],
+          ["Algebra II", "US History", "Ap Biology", "English 2", "Physical Education", "Spanish II"],
+          ["Pre-Calculus", "Chemistry", "AP Gov", "AP Lang", "AP Art History", "Spanish III"],
+          ["AP Calculus BC", "AP Chemistry", "AP Physics C:Mechanics", "English 4", "Physical Education", "Spanish IV"]
+        ])
+      }
+      else {
+        //Career plan is empty
+        console.log("balanced curriculum")
+        setClasses([
+          ["Geometry", "Modern World history", "Chemistry", "English 1", "Physical Education", "Spanish I"],
+          ["Algebra II", "AP US History", "Physics", "English 2", "Physical Education", "Spanish II"],
+          ["Pre-Calculus", "AP Psychology`", "Ap Physics 1", "Ap Lang", "AP Art history", "Spanish III"],
+          ["Ap Calculus BC", "AP Gov", "Ap Physics 2", "English 4", "AP Environmental Science", "Spanish IV"],
+        ])
       }
       setCurrentQuestionIndex(currentQuestionIndex + 1)
     }
