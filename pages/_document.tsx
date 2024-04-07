@@ -1,4 +1,5 @@
 import Navbar from "@/components/Navbar";
+import About from "@/components/About";
 import { Html, Head, Main, NextScript } from "next/document";
 
 
