@@ -11,7 +11,7 @@ export default function Home() {
       <div className="flex relative">
         <Navbar />
      </div>
-  <div className="fixed justify-center"> 
+  <div className="fixed justify-items-center "> 
     <About />
   </div>
 
