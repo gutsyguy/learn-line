@@ -22,7 +22,7 @@ const Widget = () => {
                 </div> 
             </div>
              <button className="flex basis-3 static bg-rose-500 text-black px-2 py-0.5 my-1 rounded-full items-center text-lg">  
-                <Link href="/">Get Started Now!</Link>
+                <Link href="/Quiz">Get Started Now!</Link>
              </button>
         </div>
     )
