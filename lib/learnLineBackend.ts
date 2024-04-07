@@ -1,16 +1,15 @@
 import { StudentInfo } from "./interfaces";
 
-const url = "localhost:8080"
+const url = "http://localhost:8080"; // Ensure this points to your Express server
 
-export async function bubbelApiJoinClub(req: StudentInfo) {
-    let fetchRes = await fetch(url + '/api/createStudent', {
-        method: 'post',
+export async function createStudent(studentInfo: StudentInfo) {
+    let response = await fetch(url + '/api/createStudent', {
+        method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
-
-        body: JSON.stringify(req),
+        body: JSON.stringify(studentInfo),
     });
-    let resText = await fetchRes.text();
-    return JSON.parse(resText);
+    let resText = await response.text();
+    return JSON.parse(resText); // Handle parsing based on your server's response
 }
