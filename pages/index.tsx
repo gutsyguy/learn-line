@@ -9,11 +9,11 @@ import Button from "@/components/Button";
 
 const Home = () => {
   return (
-      <main className="flex flex-col bg-[#FFFDCA] max-h-screen items-center justify-center">
-      <div className="flex relative flex-col items-center justify-center translate-y-15 translate-x-3">
+      <main className="flex flex-col bg-black items-center justify-center basis-3">
+      <div className="flex absolute flex-col items-center justify-center -translate-y-15 translate-x-4">
         <Info />
       </div>
-      <div className="bottom-6 fixed"> 
+      <div className="bottom-5 fixed"> 
       <Footer />
       </div>
     </main>

@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 const About = () => {
     return(
-        <div className="flex flex-col my-2 mx-2 space-x-4 items-center h-screen w-screen">
+        <div className="flex flex-col my-2 mx-2 space-x-4 space-y-4 items-center h-screen w-screen">
             <div className="rounded-md"> 
              <Image
              src="/learnline.png"
@@ -19,7 +19,7 @@ const About = () => {
                 </div>
                 Allowing students to take the best steps torwards their future
             </div>
-             <button className="flex basis-0.5 static bg-amber-200 text-black px-2 py-0.5 my-1 rounded-md items-center text-lg">  
+             <button className="flex basis-0.5 static bg-amber-200 text-black px-2 py-0.5 my-1 rounded-full items-center text-lg">  
                 <Link href="/"> Sign Up!</Link>
              </button>
 
