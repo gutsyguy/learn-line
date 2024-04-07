@@ -2,6 +2,7 @@ import { Answers, ClassCategory, ClassType, GradeOffered, IntendedDifficulty, St
 import React, { useState } from 'react';
 import { student } from '@/random';
 import { createStudent } from '@/lib/learnLineBackend';
+import UserProfile from './UserProfile';
 
 const questions = [
   { 
@@ -33,7 +34,7 @@ const Form = ({onDataChange, onQuizComplete}:any) => {
   const [classes, setClasses] = useState<any>([])
   const [answers, setAnswers] = useState<Answers>({});
   const [errorMessage, setErrorMessage] = useState('');
-
+  const [submittedData, setSubmittedData] = useState(null)
   
   const currentQuestion = questions[currentQuestionIndex];
   
@@ -177,6 +178,7 @@ const Form = ({onDataChange, onQuizComplete}:any) => {
       <div className='flex justify-center'>
         <button type="submit" className='py-2 px-4 bg-[#D9B878] rounded-md'>
           {currentQuestionIndex < questions.length - 1 ? 'Next' : 'Submit'}
+          {submittedData && <UserProfile submittedData={submittedData} />}
         </button>
       </div>
     </form>

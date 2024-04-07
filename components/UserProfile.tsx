@@ -2,6 +2,8 @@ import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 
+
+
 const UserProfile = () => {
     return(
         <div className="flex flex-col my-2 mx-2 space-x-4 space-y-4 items-center h-screen w-screen"> 
@@ -10,9 +12,6 @@ const UserProfile = () => {
                 Insert Name Here 
                 </div>
                 Grade here
-                <div className="place-items-start"> 
-                Future career aspirations here
-                </div>
                 <div className="current course listings here">
                 </div>
                 <div className="flex relative justify-center"> 
