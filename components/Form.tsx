@@ -26,19 +26,11 @@ const questions = [
     id: 5,
     text: "What career goals do you have"
   },
-  {
-    id: 6,
-    text: "How many honors/ap/ib classes do you want to take this year"
-  },
-  {
-    id: 7,
-    text: "How many total classes do you wish to take"
-  },
   
   // ...add more questions as needed
 ];
 
-const Form = () => {
+const Form = ({onDataChange, onQuizComplete}:any) => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [classes, setClasses] = useState<any>([])
   const [answers, setAnswers] = useState<Answers>({});
@@ -55,6 +47,9 @@ const Form = () => {
     }));
   };
 
+  const handleClassesUpdate = (newClasses:any) => {
+    onDataChange(newClasses); // Call the function passed from parent
+  };
 
 
   const createUserProfile = async () => {
@@ -91,27 +86,29 @@ const Form = () => {
     }
     else if (currentQuestion.id === 4){
       
-      if (["engineering", "Engineer"]){
+      if (["engineer", "Engineer", "engineering", "Engineering"].includes(answer)){
         console.log("lots of math and physics")
-        setClasses([
-          ["Geometry", "Modern World history", "Chemistry", "English 1", "Physical Education", "Spanish I"],
-          ["Algebra II", "AP US History", "AP Physics 1", "English 2", "Physical Education", "Spanish II"],
-          ["Pre-Calculus", "AP Physics C: Mechanics", "AP Gov", "AP Lang", "AP Art history", "Spanish III"],
-          ["AP Calculus BC", "AP CSA", "AP Physics C:Electromagnetism", "English 4", "", "Spanish IV"]
-        ])
+        handleClassesUpdate(
+          [
+            ["Geometry", "Modern World history", "Chemistry", "English 1", "Physical Education", "Spanish I"],
+            ["Algebra II", "AP US History", "AP Physics 1", "English 2", "Physical Education", "Spanish II"],
+            ["Pre-Calculus", "AP Physics C: Mechanics", "AP Gov", "AP Lang", "AP Art history", "Spanish III"],
+            ["AP Calculus BC", "AP CSA", "AP Physics C:Electromagnetism", "English 4", "", "Spanish IV"]  
+          ]
+        )
       }
-      else if (["software", "developer", "computer"]){
+      else if (["software", "developer", "computer", "Software", "Developer", "Computer"].includes(answer)){
         console.log("Cs and math")
-        setClasses([
+        handleClassesUpdate([
           ["Geometry", "Modern World history", "Chemistry", "English 1", "Physical Education", "Spanish I"],
           ["Algebra II", "AP US History", "AP Physics 1", "English 2", "Physical Education", "Spanish II"],
           ["Pre-Calculus", "AP CSA", "AP Gov", "AP Lang", "AP Art History", "Spanish III"],
           ["AP Calculus BC", "AP CSP", "AP Physics C:Mechanics", "English 4", "Physical Education", "Spanish IV"]
         ])
       }
-      else if (["Doctor, medical, nurse"]){
+      else if (["Doctor", "doctor", "medical", "Medical", "nurse", "Nurse"].includes(answer)){
         console.log("Lots of bio and chemistry")
-        setClasses([
+        handleClassesUpdate([
           ["Geometry", "Modern World history", "Biology", "English 1", "Physical Education", "Spanish I"],
           ["Algebra II", "US History", "Ap Biology", "English 2", "Physical Education", "Spanish II"],
           ["Pre-Calculus", "Chemistry", "AP Gov", "AP Lang", "AP Art History", "Spanish III"],
@@ -121,14 +118,16 @@ const Form = () => {
       else {
         //Career plan is empty
         console.log("balanced curriculum")
-        setClasses([
+        handleClassesUpdate([
           ["Geometry", "Modern World history", "Chemistry", "English 1", "Physical Education", "Spanish I"],
           ["Algebra II", "AP US History", "Physics", "English 2", "Physical Education", "Spanish II"],
           ["Pre-Calculus", "AP Psychology`", "Ap Physics 1", "Ap Lang", "AP Art history", "Spanish III"],
           ["Ap Calculus BC", "AP Gov", "Ap Physics 2", "English 4", "AP Environmental Science", "Spanish IV"],
         ])
       }
+      onQuizComplete();
       setCurrentQuestionIndex(currentQuestionIndex + 1)
+      
     }
     else if (currentQuestion.id === 6){
       if (!Number.isNaN(parseInt(answer))){
