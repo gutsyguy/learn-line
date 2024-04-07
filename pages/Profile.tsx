@@ -10,17 +10,15 @@ import Head from "next/head";
 import Widget from "@/components/widget";
 import UserWidget from "@/components/UserWidget";
 import { useState, useRef } from 'react';
+import UserProfile from "@/components/UserProfile";
 
-const Home = () => {
-  const [show, setShow] = useState(true);
-  const ref = useRef(null);
+const Profile = () => {
   
   return(
       <div className="flex flex-col bg-black items-center justify-center basis-3">
       <div className="flex absolute flex-col items-center justify-center ">
         <div className="flex relative"> 
-          <Widget />
-          {/* <UserWidget /> */}
+            <UserProfile />
         </div>
       </div>
       <div className="bottom-5 fixed"> 
@@ -30,5 +28,4 @@ const Home = () => {
   )
 }
 
-export default Home
-
+export default Profile

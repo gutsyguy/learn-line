@@ -3,8 +3,6 @@ import React, { useState } from 'react';
 import { student } from '@/random';
 import { createStudent } from '@/lib/learnLineBackend';
 
-
-
 const questions = [
   { 
     id: 1, 
@@ -54,7 +52,6 @@ const Form = () => {
       [currentQuestion.id]: value
     }));
   };
-
 
 
   const createUserProfile = async () => {
@@ -122,7 +119,7 @@ const Form = () => {
         //Career plan is empty
         console.log("balanced curriculum")
         setClasses([
-          ["Geometry", "Modern World history", "Chemistry", "English 1", "Physical Education", "Spanish I"],
+          ["Geometry", "Modern World history", "World Geography", "Chemistry", "English 1", "Physical Education", "Spanish I"],
           ["Algebra II", "AP US History", "Physics", "English 2", "Physical Education", "Spanish II"],
           ["Pre-Calculus", "AP Psychology`", "Ap Physics 1", "Ap Lang", "AP Art history", "Spanish III"],
           ["Ap Calculus BC", "AP Gov", "Ap Physics 2", "English 4", "AP Environmental Science", "Spanish IV"],
