@@ -43,7 +43,7 @@ export interface StudentInfo{
       classes: ClassInfo[],
       advancedClassCap: number,
       totalClassCap: number,
-      desiredDifficulty: IntendedDifficulty 
+      desiredDifficulty: String 
 }
   
 export interface ClassInfo {

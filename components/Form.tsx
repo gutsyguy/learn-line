@@ -1,5 +1,7 @@
 import { Answers, ClassCategory, ClassType, GradeOffered, IntendedDifficulty, StudentInfo } from '@/lib/interfaces';
 import React, { useState } from 'react';
+import { student } from '@/random';
+import { createStudent } from '@/lib/learnLineBackend';
 
 
 
@@ -18,7 +20,7 @@ const questions = [
   },
   {
     id: 4,
-    text: "If you have decided  on a career, what is it? (Type n/a if you haven't)"
+    text: "If you have decided on a career, what is it? (Type n/a if you haven't)"
   },
   {
     id: 5,
@@ -41,38 +43,6 @@ const Form = () => {
   const [answers, setAnswers] = useState<Answers>({});
   const [errorMessage, setErrorMessage] = useState('');
 
-  const student:StudentInfo = {
-    id: 34,
-    name: "Joe Luis",
-    careerDecided: true,
-    careerPlan: "Sof",
-    careerGoals: ["Make money", "Be famous"],
-    classes: [
-      {
-        className: "AP Physics C:Mechanics",
-        offered: true,
-        taken: true,
-        gradeOffered: GradeOffered.C,
-        classType: ClassType.ap,
-        classCategory: ClassCategory.D,
-        classDifficulty: 10,  
-        students: [] 
-      },
-      {
-        className: "AP Chemistry",
-        offered: true,
-        taken: true,
-        gradeOffered: GradeOffered.C,
-        classType: ClassType.ap,
-        classCategory: ClassCategory.D,
-        classDifficulty: 10,  
-        students: [] 
-      }
-    ],
-    advancedClassCap: 4,
-    totalClassCap: 5,
-    desiredDifficulty: IntendedDifficulty.C
-  }
   
   const currentQuestion = questions[currentQuestionIndex];
   
@@ -84,10 +54,19 @@ const Form = () => {
     }));
   };
 
-  const createUserProfile = (student:StudentInfo) => {
-    
-  }
-  
+
+
+  const createUserProfile = async () => {
+    try {
+      const studentInfo: StudentInfo = student
+      const response = await createStudent(studentInfo);
+      console.log(response);
+    } catch (error) {
+      console.error('Error creating user profile:', error);
+      setErrorMessage('Failed to create student profile. Please try again.');
+    }
+  };
+ 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const answer = answers[currentQuestion.id];
@@ -112,6 +91,16 @@ const Form = () => {
     else if (currentQuestion.id === 4){
       if (["n/a", "N/A"].includes(answer)){
         //Career plan is empty
+        console.log("balanced curriculum")
+      }
+      else if (["engineering", "Engineer"]){
+        console.log("lots of math and physics")
+      }
+      else if (["software", "developer", "computer"]){
+        console.log("Cs and math")
+      }
+      else if (["Doctor, medical, nurse"]){
+        console.log("Lots of bio and chemistry")
       }
       setCurrentQuestionIndex(currentQuestionIndex + 1)
     }
@@ -127,6 +116,7 @@ const Form = () => {
     }
     else if (currentQuestion.id === 7){
       if (!Number.isNaN(parseInt(answer))){
+        createUserProfile()
         //add the logic to make sure this is greater than or equal to advanced class number
         console.log('Final answers:', answers);
       }
@@ -137,9 +127,11 @@ const Form = () => {
     }
 
     else if (currentQuestionIndex < questions.length - 1) {
+      createUserProfile()
+      console.log('Final answers:', answers);
       setCurrentQuestionIndex(currentQuestionIndex + 1);
     } else {
-      console.log('Final answers:', answers);
+      setCurrentQuestionIndex(currentQuestionIndex + 1);
       // Process the final answers as needed
     }
   };
