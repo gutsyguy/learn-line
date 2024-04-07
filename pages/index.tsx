@@ -5,7 +5,7 @@ import About from "@/components/About";
 import books from '../public/books.jpeg'; 
 import Info from "@/components/Info";
 import Footer from "@/components/Footer";
-import Button from "@/components/button";
+import Button from "@/components/Button";
 
 export default function Home() {
   return (
