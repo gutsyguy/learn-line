@@ -8,7 +8,7 @@ import Footer from "@/components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home() {
+const Home = () => {
   return (
     <main className="relative flex-col space-y-2 bg-[#FFFDCA] min-h-screen">
       <div className="flex relative">
@@ -19,3 +19,5 @@ export default function Home() {
     </main>
   );
 }
+
+export default Home

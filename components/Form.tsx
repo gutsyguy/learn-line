@@ -1,9 +1,7 @@
+import { Answers, ClassCategory, ClassType, GradeOffered, IntendedDifficulty, StudentInfo } from '@/lib/interfaces';
 import React, { useState } from 'react';
 
-interface Answers {
-    [key: number]: string;
-  }
-  
+
 
 const questions = [
   { 
@@ -42,6 +40,39 @@ const Form = () => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [answers, setAnswers] = useState<Answers>({});
   const [errorMessage, setErrorMessage] = useState('');
+
+  const student:StudentInfo = {
+    id: 34,
+    name: "Joe Luis",
+    careerDecided: true,
+    careerPlan: "Sof",
+    careerGoals: ["Make money", "Be famous"],
+    classes: [
+      {
+        className: "AP Physics C:Mechanics",
+        offered: true,
+        taken: true,
+        gradeOffered: GradeOffered.C,
+        classType: ClassType.ap,
+        classCategory: ClassCategory.D,
+        classDifficulty: 10,  
+        students: [] 
+      },
+      {
+        className: "AP Chemistry",
+        offered: true,
+        taken: true,
+        gradeOffered: GradeOffered.C,
+        classType: ClassType.ap,
+        classCategory: ClassCategory.D,
+        classDifficulty: 10,  
+        students: [] 
+      }
+    ],
+    advancedClassCap: 4,
+    totalClassCap: 5,
+    desiredDifficulty: IntendedDifficulty.C
+  }
   
   const currentQuestion = questions[currentQuestionIndex];
   
@@ -52,6 +83,10 @@ const Form = () => {
       [currentQuestion.id]: value
     }));
   };
+
+  const createUserProfile = (student:StudentInfo) => {
+    
+  }
   
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -93,6 +128,7 @@ const Form = () => {
     else if (currentQuestion.id === 7){
       if (!Number.isNaN(parseInt(answer))){
         //add the logic to make sure this is greater than or equal to advanced class number
+        console.log('Final answers:', answers);
       }
       else{
         alert("Please enter a valid whole number");

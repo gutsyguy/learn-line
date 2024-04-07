@@ -7,7 +7,7 @@ import Info from "@/components/Info";
 import Footer from "@/components/Footer";
 import Button from "@/components/Button";
 
-export default function Home() {
+const Home = () => {
   return (
       <main className="flex flex-col bg-[#FFFDCA] max-h-screen items-center justify-center">
       <div className="flex relative flex-col items-center justify-center translate-x-5">
@@ -22,3 +22,5 @@ export default function Home() {
     </main>
   );
 }
+
+export default Home

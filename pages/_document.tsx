@@ -9,11 +9,6 @@ export default function Document() {
       <Head />
       <body className="flex-col justify-center content-center">
         <Navbar/>
-        {/* <About /> */}
-        {/* <div className="flex flex-col justify-center items-center"> */}
-        {/* <Info />
-        <Button /> */}
-         {/* </div>  */}
         <Main />
         <NextScript />
       </body>
