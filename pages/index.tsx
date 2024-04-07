@@ -11,7 +11,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
-    <main className="relative flex-col space-y-2">
+    <main className="relative flex-col space-y-2 bg-black min-h-screen">
       <div className="flex relative">
         <Navbar />
       </div>
