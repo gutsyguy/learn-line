@@ -16,8 +16,8 @@ const Home = () => {
       <div className="flex flex-col bg-black items-center justify-center basis-3">
       <div className="flex absolute flex-col items-center justify-center ">
         <div className="flex relative"> 
-          {/* <Widget /> */}
-           <UserWidget />
+          <Widget />
+          {/* <UserWidget /> */}
         </div>
       </div>
       <div className="bottom-5 fixed"> 
