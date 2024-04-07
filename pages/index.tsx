@@ -13,23 +13,11 @@ export default function Home() {
   return (
     <main className="relative flex-col space-y-2 bg-black min-h-screen">
       <div className="flex relative">
-        <Navbar />
+        {/* <Navbar /> */}
+     </div>
+     <div className="fixed justify-items-center"> 
+        <About />
       </div>
-  <div className="fixed justify-items-center"> 
-    <About />
-  </div>
-    <div className="flex static">
-      <Image
-      src="/books.png"
-      width={120}
-      height={120}
-      alt="Books"
-      />
-      <Info />
-   </div>
-  <div className="fixed">
-      <Footer />
-  </div>
     </main>
   );
 }
