@@ -7,7 +7,7 @@ import Info from "@/components/Info";
 import Footer from "@/components/Footer";
 import Button from "@/components/Button";
 
-const Home = () => {
+const Index = () => {
   return (
       <main className="flex flex-col bg-black items-center justify-center basis-3">
       <div className="flex absolute flex-col items-center justify-center -translate-y-15 translate-x-4">
@@ -20,4 +20,4 @@ const Home = () => {
   );
 }
 
-export default Home
+export default Index

@@ -6,9 +6,12 @@ import books from '../public/books.jpeg';
 import Info from "@/components/Info";
 import Footer from "@/components/Footer";
 import Button from "@/components/Button";
+import Head from "next/head";
+import { ReactElement } from "react";
+import type { NextPage } from "next";
 
-export default function Home(){
-  return 
+const Home = () => {
+  return(
       <div className="flex flex-col bg-black items-center justify-center basis-3">
       <div className="flex absolute flex-col items-center justify-center -translate-y-15 translate-x-4">
         <Info />
@@ -17,6 +20,8 @@ export default function Home(){
       <Footer />
       </div>
     </div>
-  
+  )
 }
+
+export default Home
 

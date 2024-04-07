@@ -14,7 +14,7 @@ const Navbar = () => {
                 <Link href="/">About</Link>
               </div>
               <div className="bg-rose-500 text-white px-4 py-2 my-1 rounded-md">
-                <Link href="/">Sign Up</Link>
+                <Link href="/home">Sign Up</Link>
               </div>
             </div>
           </div>
