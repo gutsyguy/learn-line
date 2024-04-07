@@ -4,7 +4,7 @@ import learnlineImage from '../public/learnline.png';
 
 const About = () => {
     return(
-        <div className="flex fixed flex-col my-2 mx-2 space-x-6 items-center h-screen w-screen">
+        <div className="flex fixed flex-col my-2 mx-2 space-x-4 items-center h-screen w-screen">
             <div className="rounded-md"> 
              <Image
              src="/learnline.png"
