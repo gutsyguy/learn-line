@@ -178,7 +178,6 @@ const Form = ({onDataChange, onQuizComplete}:any) => {
       <div className='flex justify-center'>
         <button type="submit" className='py-2 px-4 bg-[#D9B878] rounded-md'>
           {currentQuestionIndex < questions.length - 1 ? 'Next' : 'Submit'}
-          {submittedData && <UserProfile submittedData={submittedData} />}
         </button>
       </div>
     </form>
