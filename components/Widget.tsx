@@ -11,18 +11,18 @@ const Widget = () => {
                 src="/danger.svg"
                 width={120}
                 height={120}
-                alt="Our Logo "
+                alt="Exclamation Mark"
                 />
                 </div>
                 <div className="space-y-2"> 
-                <div className="font-semibold">
-                It looks like you barely begun!
+                <div className="font-semibold text-lg">
+                It looks like you need to fill out our form!
                 </div>
                 Begin to sculpt your ideal future today by taking our simple form now!
                 </div> 
             </div>
-             <button className="flex basis-0.5 static bg-rose-500 text-black px-2 py-0.5 my-1 rounded-full items-center text-lg">  
-                <Link href="/">Get Started Now</Link>
+             <button className="flex basis-3 static bg-rose-500 text-black px-2 py-0.5 my-1 rounded-full items-center text-lg">  
+                <Link href="/">Get Started Now!</Link>
              </button>
         </div>
     )

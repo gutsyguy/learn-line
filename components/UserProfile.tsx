@@ -2,7 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 
-const Profile = () => {
+const UserProfile = () => {
     return(
         <div className="flex flex-col my-2 mx-2 space-x-4 space-y-4 items-center h-screen w-screen">
             <div className="rounded-md"> 
@@ -18,10 +18,14 @@ const Profile = () => {
                 Insert Name Here 
                 </div>
                 Future career aspirations here 
+                <div className="place-items-start"> 
+
+
+                </div>
             </div>
              
         </div>
     )
 }
 
-export default Profile
+export default UserProfile
