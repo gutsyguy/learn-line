@@ -91,6 +91,16 @@ const Form = () => {
     else if (currentQuestion.id === 4){
       if (["n/a", "N/A"].includes(answer)){
         //Career plan is empty
+        console.log("balanced curriculum")
+      }
+      else if (["engineering", "Engineer"]){
+        console.log("lots of math and physics")
+      }
+      else if (["software", "developer", "computer"]){
+        console.log("Cs and math")
+      }
+      else if (["Doctor, medical, nurse"]){
+        console.log("Lots of bio and chemistry")
       }
       setCurrentQuestionIndex(currentQuestionIndex + 1)
     }
