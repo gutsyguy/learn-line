@@ -20,7 +20,7 @@ const About = () => {
                 Allowing students to take the best steps torwards their future
             </div>
              <button className="flex basis-0.5 static bg-amber-200 text-black px-2 py-0.5 my-1 rounded-full items-center text-lg">  
-                <Link href="/home"> Sign Up!</Link>
+                <Link href="/home"> Get Started</Link>
              </button>
 
         </div>
