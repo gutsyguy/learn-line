@@ -9,7 +9,7 @@ import Button from "@/components/Button";
 
 export default function Home() {
   return (
-      <main className="flex flex-col bg-black max-h-screen items-center justify-center">
+      <main className="flex flex-col bg-[#FFFDCA] max-h-screen items-center justify-center">
       <div className="flex relative flex-col items-center justify-center translate-x-5">
         <Info />
       <div> 
